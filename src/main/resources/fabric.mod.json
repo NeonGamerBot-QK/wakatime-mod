@@ -3,15 +3,15 @@
 	"id": "wakatime-mod",
 	"version": "${version}",
 	"name": "Wakatime Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Connects your playtime to wakatime!",
 	"authors": [
 		"Neon"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://saahild.com/",
+		"sources": "https://github.com/NeonGamerBot-QK/wakatime-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "WTFPL",
 	"icon": "assets/wakatime-mod/icon.png",
 	"environment": "*",
 	"entrypoints": {
