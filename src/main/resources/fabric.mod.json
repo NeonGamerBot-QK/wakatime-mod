@@ -29,6 +29,12 @@
     "java": ">=21",
     "fabric-api": "*"
   },
+  "custom": {
+    "modmenu": {
+      "badges": [ "hackclub", "wakatime" ],
+      "update_checker": true
+    }
+  },
   "suggests": {
     "another-mod": "*"
   }

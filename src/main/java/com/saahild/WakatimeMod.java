@@ -1,7 +1,13 @@
 package com.saahild;
 
+import com.saahild.command.SetAPIKey;
+import com.saahild.event.WakatimePlayerMoveEvent;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.minecraft.entity.player.PlayerAbilities;
+import net.minecraft.server.PlayerManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +25,17 @@ public class WakatimeMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Setting up commands & events");
+		registerCommands();
+		registerEvents();
+		LOGGER.info("Set up commands & events!");
+
 	}
+	private static void registerCommands() {
+		CommandRegistrationCallback.EVENT.register(SetAPIKey::register);
+	}
+	// register events
+	 private static void registerEvents() {
+	 	PlayerBlockBreakEvents.AFTER.register(new WakatimePlayerMoveEvent());
+	 }
 }
