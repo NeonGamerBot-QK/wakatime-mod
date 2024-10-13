@@ -11,29 +11,30 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import com.saahild.MemConfig;
 
 public class SetAPIKey {
 
   public static void register(
-    CommandDispatcher<ServerCommandSource> dispatcher,
-    CommandRegistryAccess commandRegistryAccess,
-    CommandManager.RegistrationEnvironment registrationEnvironment
-  ) {
+      CommandDispatcher<ServerCommandSource> dispatcher,
+      CommandRegistryAccess commandRegistryAccess,
+      CommandManager.RegistrationEnvironment registrationEnvironment) {
     dispatcher.register(
-      CommandManager.literal("setapikey").then(
-        CommandManager.argument("key", StringArgumentType.string()).executes(
-          SetAPIKey::run
-        )
-      )
-    );
+        CommandManager.literal("setapikey").then(
+            CommandManager.argument("key", StringArgumentType.string()).executes(
+                SetAPIKey::run)));
   }
 
   private static int run(CommandContext<ServerCommandSource> context)
-    throws CommandSyntaxException {
+      throws CommandSyntaxException {
     ServerPlayerEntity player = context.getSource().getPlayer();
     String key = context.getArgument("key", String.class);
+    WakatimeMod.LOGGER.info("Current api key:" + MemConfig.getApiKey());
     WakatimeMod.LOGGER.info("API Key set for " + player.getServer().getName());
-    context.getSource().sendMessage(Text.of("Test 123"));
+    // context.getSource().sendMessage(Text.of("Test 123"));
+    MemConfig.setApiKey(key);
+    context.getSource().sendMessage(Text.of("API key set!"));
+
     return 0;
   }
 }
