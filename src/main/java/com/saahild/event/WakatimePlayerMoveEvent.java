@@ -12,24 +12,25 @@ import org.jetbrains.annotations.Nullable;
 // player move event
 public class WakatimePlayerMoveEvent implements PlayerBlockBreakEvents.After {
 
-  @Override
-  public void afterBlockBreak(
-    World world,
-    PlayerEntity player,
-    BlockPos pos,
-    BlockState state,
-    @Nullable BlockEntity blockEntity
-  ) {
-    WakatimeMod.LOGGER.info(
-      "Player " +
-      player.getName() +
-      " broke a block at " +
-      pos.getX() +
-      ", " +
-      pos.getY() +
-      ", " +
-      pos.getZ()
-    );
-    // TODO: add wakatime heartbeat here!
-  }
+    @Override
+    public void afterBlockBreak(
+            World world,
+            PlayerEntity player,
+            BlockPos pos,
+            BlockState state,
+            @Nullable BlockEntity blockEntity
+    ) {
+        WakatimeMod.LOGGER.info(
+                "Player " +
+                        player.getName() +
+                        " broke a block at " +
+                        pos.getX() +
+                        ", " +
+                        pos.getY() +
+                        ", " +
+                        pos.getZ()
+        );
+        // TODO: add wakatime heartbeat here!
+
+    }
 }

@@ -4,7 +4,9 @@
   "version": "${version}",
   "name": "Wakatime Mod",
   "description": "Connects your playtime to wakatime!",
-  "authors": ["Neon"],
+  "authors": [
+    "Neon"
+  ],
   "contact": {
     "homepage": "https://saahild.com/",
     "sources": "https://github.com/NeonGamerBot-QK/wakatime-mod"
@@ -13,8 +15,12 @@
   "icon": "assets/wakatime-mod/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.saahild.WakatimeMod"],
-    "client": ["com.saahild.WakatimeModClient"]
+    "main": [
+      "com.saahild.WakatimeMod"
+    ],
+    "client": [
+      "com.saahild.WakatimeModClient"
+    ]
   },
   "mixins": [
     "wakatime-mod.mixins.json",
@@ -31,7 +37,10 @@
   },
   "custom": {
     "modmenu": {
-      "badges": ["hackclub", "wakatime"],
+      "badges": [
+        "hackclub",
+        "wakatime"
+      ],
       "update_checker": true
     }
   },
