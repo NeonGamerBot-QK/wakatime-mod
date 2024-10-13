@@ -31,6 +31,5 @@ public class WakatimePlayerMoveEvent implements PlayerBlockBreakEvents.After {
       pos.getZ()
     );
     // TODO: add wakatime heartbeat here!
-
   }
 }

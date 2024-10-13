@@ -8,8 +8,7 @@ wakatime will report this as gaming/browsing time and report it on the correct i
 
 ## Installation
 
-Download the latest release from the [releases page](https://github.com/wakatime/wakatime-mod/releases) and place the
-jar in your mods folder.
+Download the latest release from the [releases page](https://github.com/wakatime/wakatime-mod/releases) and place the jar in your mods folder.
 
 <!-- TODO add modrinth link -->
 
@@ -28,8 +27,7 @@ You can find the config file in the config folder of your minecraft folder.
 
 ## Contributing
 
-If you want to contribute to this project, please read
-the [contributing guidelines](https://github.com/NeonGamerBot-QK/wakatime-mod/blob/main/CONTRIBUTING.md).
+If you want to contribute to this project, please read the [contributing guidelines](https://github.com/NeonGamerBot-QK/wakatime-mod/blob/main/CONTRIBUTING.md).
 
 ## License
 
