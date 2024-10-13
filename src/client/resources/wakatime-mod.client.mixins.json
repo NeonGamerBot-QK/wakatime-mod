@@ -2,9 +2,7 @@
   "required": true,
   "package": "com.saahild.mixin.client",
   "compatibilityLevel": "JAVA_21",
-  "client": [
-    "ExampleClientMixin"
-  ],
+  "client": ["ExampleClientMixin"],
   "injectors": {
     "defaultRequire": 1
   }
