@@ -28,6 +28,7 @@ public class WakatimeMod implements ModInitializer {
     LOGGER.info("Setting up commands & events");
     registerCommands();
     registerEvents();
+    MemConfig.init();
     LOGGER.info("Set up commands & events!");
   }
 

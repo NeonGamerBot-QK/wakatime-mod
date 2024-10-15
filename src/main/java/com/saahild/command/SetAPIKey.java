@@ -16,21 +16,17 @@ import net.minecraft.text.Text;
 public class SetAPIKey {
 
   public static void register(
-    CommandDispatcher<ServerCommandSource> dispatcher,
-    CommandRegistryAccess commandRegistryAccess,
-    CommandManager.RegistrationEnvironment registrationEnvironment
-  ) {
+      CommandDispatcher<ServerCommandSource> dispatcher,
+      CommandRegistryAccess commandRegistryAccess,
+      CommandManager.RegistrationEnvironment registrationEnvironment) {
     dispatcher.register(
-      CommandManager.literal("setapikey").then(
-        CommandManager.argument("key", StringArgumentType.string()).executes(
-          SetAPIKey::run
-        )
-      )
-    );
+        CommandManager.literal("setapikey").then(
+            CommandManager.argument("key", StringArgumentType.string()).executes(
+                SetAPIKey::run)));
   }
 
   private static int run(CommandContext<ServerCommandSource> context)
-    throws CommandSyntaxException {
+      throws CommandSyntaxException {
     ServerPlayerEntity player = context.getSource().getPlayer();
     String key = context.getArgument("key", String.class);
     WakatimeMod.LOGGER.info("Current api key:" + MemConfig.getApiKey());
