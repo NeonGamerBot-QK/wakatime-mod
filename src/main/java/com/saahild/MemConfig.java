@@ -1,24 +1,28 @@
 package com.saahild;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 // TODO: (maybe) use like file config or something
 // @see when ready to make file config = https://forums.minecraftforge.net/topic/64259-solved-config-files-189/
 // this is being used cuz im not the greatest at java
 public class MemConfig {
+
   private static String apiKey = "";
   private static String serverURL = "https://wakatime.com/api/v1";
-  private static File configFile = new File(System.getProperty("user.home") + "/.wakatime.cfg");
+  private static File configFile = new File(
+    System.getProperty("user.home") + "/.wakatime.cfg"
+  );
 
   public static void init() {
-
     if (!configFile.canRead()) {
       // we are COOKED
-      WakatimeMod.LOGGER.error("Cannot read config file! (either cant read file / does not exist) Exiting...");
+      WakatimeMod.LOGGER.error(
+        "Cannot read config file! (either cant read file / does not exist) Exiting..."
+      );
       System.exit(1);
     }
     if (!configFile.exists()) {
@@ -27,8 +31,7 @@ public class MemConfig {
     } else {
       // read cfg with scanner
       WakatimeMod.LOGGER.info("Reading cfg w/ scanner");
-      try (
-          Scanner reader = new Scanner(configFile)) {
+      try (Scanner reader = new Scanner(configFile)) {
         while (reader.hasNextLine()) {
           String data = reader.nextLine();
           WakatimeMod.LOGGER.info("Data: " + data);
@@ -51,7 +54,9 @@ public class MemConfig {
     MemConfig.apiKey = apiKey;
     // set key in file asw
     try {
-      FileWriter myWriter = new FileWriter(System.getProperty("user.home") + "/.wakatime.cfg");
+      FileWriter myWriter = new FileWriter(
+        System.getProperty("user.home") + "/.wakatime.cfg"
+      );
       myWriter.write("[settings]\n");
       myWriter.write("api_key = " + apiKey);
       myWriter.close();
