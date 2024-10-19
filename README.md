@@ -1,4 +1,5 @@
 [![wakatime](https://wakatime.com/badge/user/018eed1d-6093-4f51-9fca-7863b7a1ac97/project/df01b6da-ab27-44a3-9390-b242e974aea6.svg)](https://wakatime.com/badge/user/018eed1d-6093-4f51-9fca-7863b7a1ac97/project/df01b6da-ab27-44a3-9390-b242e974aea6)
+
 ## Wakatime Mod
 
 <!-- TODO PREVIEW HERE -->
