@@ -17,20 +17,22 @@ public class WakatimePlayerMoveEvent implements PlayerBlockBreakEvents.After {
 
   @Override
   public void afterBlockBreak(
-      World world,
-      PlayerEntity player,
-      BlockPos pos,
-      BlockState state,
-      @Nullable BlockEntity blockEntity) {
+    World world,
+    PlayerEntity player,
+    BlockPos pos,
+    BlockState state,
+    @Nullable BlockEntity blockEntity
+  ) {
     WakatimeMod.LOGGER.info(
-        "Player " +
-            player.getName() +
-            " broke a block at " +
-            pos.getX() +
-            ", " +
-            pos.getY() +
-            ", " +
-            pos.getZ());
+      "Player " +
+      player.getName() +
+      " broke a block at " +
+      pos.getX() +
+      ", " +
+      pos.getY() +
+      ", " +
+      pos.getZ()
+    );
     String serverName = world.getServer().getName();
     if (!world.getServer().isRemote()) {
       // get world name of single player world
@@ -38,14 +40,14 @@ public class WakatimePlayerMoveEvent implements PlayerBlockBreakEvents.After {
     }
     WakatimeMod.LOGGER.info("Current server name: " + serverName);
     WakatimeMod.LOGGER.info("Current api key " + MemConfig.getApiKey());
-    if (!MemConfig.canSend())
-      return;
+    if (!MemConfig.canSend()) return;
     try {
       RequestHandler.sendHeartbeat(
-          MemConfig.getApiKey(),
-          "Minecraft",
-          MemConfig.getServerURL(),
-          serverName);
+        MemConfig.getApiKey(),
+        "Minecraft",
+        MemConfig.getServerURL(),
+        serverName
+      );
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }
