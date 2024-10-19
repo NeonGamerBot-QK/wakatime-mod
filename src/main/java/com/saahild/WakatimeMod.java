@@ -1,5 +1,7 @@
 package com.saahild;
 
+import com.mojang.brigadier.Command;
+import com.saahild.command.GetWakatimeInfo;
 import com.saahild.command.SetAPIKey;
 import com.saahild.event.WakatimePlayerMoveEvent;
 import net.fabricmc.api.ModInitializer;
@@ -34,6 +36,7 @@ public class WakatimeMod implements ModInitializer {
 
   private static void registerCommands() {
     CommandRegistrationCallback.EVENT.register(SetAPIKey::register);
+    CommandRegistrationCallback.EVENT.register(GetWakatimeInfo::register);
   }
 
   // register events
