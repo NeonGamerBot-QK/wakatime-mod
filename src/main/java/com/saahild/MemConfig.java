@@ -43,7 +43,6 @@ public class MemConfig {
           }
         }
       } catch (FileNotFoundException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
     }
@@ -63,7 +62,6 @@ public class MemConfig {
       myWriter.write("api_key = " + apiKey);
       myWriter.close();
     } catch (IOException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }

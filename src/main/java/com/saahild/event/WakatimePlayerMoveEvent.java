@@ -23,7 +23,6 @@ public class WakatimePlayerMoveEvent implements PlayerBlockBreakEvents.After {
       BlockPos pos,
       BlockState state,
       @Nullable BlockEntity blockEntity) {
-    // TODO: nuke debug
     WakatimeMod.LOGGER.info(
         "Player " +
             player.getName() +
@@ -49,7 +48,6 @@ public class WakatimePlayerMoveEvent implements PlayerBlockBreakEvents.After {
           MemConfig.getServerURL(),
           serverName);
     } catch (URISyntaxException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
