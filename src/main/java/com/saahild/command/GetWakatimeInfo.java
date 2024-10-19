@@ -12,23 +12,25 @@ import net.minecraft.text.Text;
 
 public class GetWakatimeInfo {
 
-    public static void register(
-            CommandDispatcher<ServerCommandSource> dispatcher,
-            CommandRegistryAccess commandRegistryAccess,
-            CommandManager.RegistrationEnvironment registrationEnvironment) {
-        dispatcher.register(
-                CommandManager.literal("getwakatimeinfo").executes(GetWakatimeInfo::run));
-    }
+  public static void register(
+    CommandDispatcher<ServerCommandSource> dispatcher,
+    CommandRegistryAccess commandRegistryAccess,
+    CommandManager.RegistrationEnvironment registrationEnvironment
+  ) {
+    dispatcher.register(
+      CommandManager.literal("getwakatimeinfo").executes(GetWakatimeInfo::run)
+    );
+  }
 
-    private static int run(CommandContext<ServerCommandSource> context)
-            throws CommandSyntaxException {
-        String key = MemConfig.getApiKey();
-        String serverURL = MemConfig.getServerURL();
-        WakatimeMod.LOGGER.info("Current api key:" + key);
-        WakatimeMod.LOGGER.info("Current server URL:" + serverURL);
-        context.getSource().sendMessage(Text.of("Current creds:"));
-        context.getSource().sendMessage(Text.of("API Key: " + key));
-        context.getSource().sendMessage(Text.of("Server URL: " + serverURL));
-        return 0;
-    }
+  private static int run(CommandContext<ServerCommandSource> context)
+    throws CommandSyntaxException {
+    String key = MemConfig.getApiKey();
+    String serverURL = MemConfig.getServerURL();
+    WakatimeMod.LOGGER.info("Current api key:" + key);
+    WakatimeMod.LOGGER.info("Current server URL:" + serverURL);
+    context.getSource().sendMessage(Text.of("Current creds:"));
+    context.getSource().sendMessage(Text.of("API Key: " + key));
+    context.getSource().sendMessage(Text.of("Server URL: " + serverURL));
+    return 0;
+  }
 }
