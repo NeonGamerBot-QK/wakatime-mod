@@ -1,6 +1,5 @@
 package com.saahild.event;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import com.saahild.MemConfig;
 import com.saahild.RequestHandler;
 import com.saahild.WakatimeMod;
