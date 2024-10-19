@@ -16,13 +16,7 @@
     "main": ["com.saahild.WakatimeMod"],
     "client": ["com.saahild.WakatimeModClient"]
   },
-  "mixins": [
-    "wakatime-mod.mixins.json",
-    {
-      "config": "wakatime-mod.client.mixins.json",
-      "environment": "client"
-    }
-  ],
+  "mixins": [],
   "depends": {
     "fabricloader": ">=0.16.5",
     "minecraft": "~1.21.1",
