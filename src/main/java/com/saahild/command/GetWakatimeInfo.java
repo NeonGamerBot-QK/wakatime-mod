@@ -1,7 +1,6 @@
 package com.saahild.command;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.saahild.MemConfig;
@@ -9,7 +8,6 @@ import com.saahild.WakatimeMod;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 public class GetWakatimeInfo {
@@ -24,7 +22,6 @@ public class GetWakatimeInfo {
 
     private static int run(CommandContext<ServerCommandSource> context)
             throws CommandSyntaxException {
-        ServerPlayerEntity player = context.getSource().getPlayer();
         String key = MemConfig.getApiKey();
         String serverURL = MemConfig.getServerURL();
         WakatimeMod.LOGGER.info("Current api key:" + key);
