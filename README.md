@@ -1,3 +1,4 @@
+[![wakatime](https://wakatime.com/badge/user/018eed1d-6093-4f51-9fca-7863b7a1ac97/project/df01b6da-ab27-44a3-9390-b242e974aea6.svg)](https://wakatime.com/badge/user/018eed1d-6093-4f51-9fca-7863b7a1ac97/project/df01b6da-ab27-44a3-9390-b242e974aea6)
 ## Wakatime Mod
 
 <!-- TODO PREVIEW HERE -->
@@ -14,16 +15,7 @@ Download the latest release from the [releases page](https://github.com/wakatime
 
 ## Configuration
 
-The mod will look for a config file in the config folder.
-You can find the config file in the config folder of your minecraft folder.
-
-### Example config file
-
-```json
-{
-  "api_key": "your_api_key"
-}
-```
+The mod will follow the `api_key` and `api_url` from the `~/.wakatime.cfg` file if it exists.<br>
 
 ## Contributing
 
