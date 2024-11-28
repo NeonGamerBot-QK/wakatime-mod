@@ -2,7 +2,7 @@ package com.saahild;
 
 import com.saahild.command.GetWakatimeInfo;
 import com.saahild.command.SetAPIKey;
-import com.saahild.event.WakatimePlayerMoveEvent;
+import com.saahild.event.WakatimePlayerBlockBreak;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
@@ -27,7 +27,7 @@ public class WakatimeMod implements ModInitializer {
     LOGGER.info("Setting up commands & events");
     registerCommands();
     registerEvents();
-    MemConfig.init();
+    ConfigFile.init();
     LOGGER.info("Set up commands & events!");
   }
 
@@ -38,6 +38,6 @@ public class WakatimeMod implements ModInitializer {
 
   // register events
   private static void registerEvents() {
-    PlayerBlockBreakEvents.AFTER.register(new WakatimePlayerMoveEvent());
+    PlayerBlockBreakEvents.AFTER.register(new WakatimePlayerBlockBreak());
   }
 }

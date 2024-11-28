@@ -13,8 +13,7 @@
   "icon": "assets/wakatime-mod/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.saahild.WakatimeMod"],
-    "client": ["com.saahild.WakatimeModClient"]
+    "main": ["com.saahild.WakatimeMod"]
   },
   "mixins": [],
   "depends": {
@@ -28,8 +27,5 @@
       "badges": ["hackclub", "wakatime"],
       "update_checker": true
     }
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
